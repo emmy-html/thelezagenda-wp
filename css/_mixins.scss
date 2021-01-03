@@ -1,0 +1,91 @@
+@mixin dyke-gradient {
+  padding-bottom: 10px;
+  background: linear-gradient(
+      to right,
+      $rgba-light-brown 0%,
+      $rgba-orange 22%,
+      $rgba-light-orange 47%,
+      $rgba-light-pink 67%,
+      $rgba-dark-pink 100%
+    )
+    left bottom $brown no-repeat;
+  background-size: 200px 7px;
+  background-position: bottom center;
+}
+@mixin dyke-hr-gradient {
+  /* gradient settings */
+  background: linear-gradient(
+      to left,
+      $rgba-light-brown 0%,
+      $rgba-orange 22%,
+      $rgba-light-orange 47%,
+      $rgba-light-pink 67%,
+      $rgba-dark-pink 100%
+    )
+    left bottom $brown no-repeat;
+  background-size: 100% 7px;
+  background-position: bottom center;
+  /* hr settings */
+  border-top: none;
+  width: 80%;
+  margin: 0 auto;
+  height: 2px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+@mixin dyke-gradient-border {
+  background: linear-gradient(
+      to bottom,
+      $rgba-light-brown 0%,
+      $rgba-orange 22%,
+      $rgba-light-orange 47%,
+      $rgba-light-pink 67%,
+      $rgba-dark-pink 100%
+    )
+    left bottom $brown no-repeat;
+}
+@mixin page-header {
+  h1 {
+    border-bottom: 3px solid $light-orange;
+    color: $light-pink;
+    margin-bottom: 20px;
+    text-transform: lowercase;
+    text-align: center;
+  }
+}
+@mixin blog-post-title {
+  h1 {
+    a:link,
+    a:visited {
+      display: block;
+      color: $brown;
+      background: $light-orange;
+      border-bottom: 3px solid $light-orange;
+      padding: 10px;
+      font-size: 1.25rem;
+      line-height: 1.45rem;
+      letter-spacing: 0.35px;
+      text-transform: lowercase;
+      margin-bottom: 5px;
+      &:hover {
+        background: none;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s background-color;
+      }
+    }
+  }
+}
+@mixin post-metadata {
+    .blog-post-author {
+      a:link,
+      a:visited {
+          color: #fff;
+          border-bottom: 2px solid $light-orange;
+          &:hover {
+              color: $light-orange;
+              transition: .3s color;
+          }
+      }
+  }
+}
