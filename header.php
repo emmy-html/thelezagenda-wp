@@ -41,6 +41,6 @@
     </header>
     <section id="hero">
       <div class="content-wrapper">
-        <h1 class="hero-logo-span">the<span>dyke</span>agenda</h1>
+        <h1 class="hero-logo-span">the<span>lez</span>agenda</h1>
       </div>
     </section>

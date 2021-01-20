@@ -1,4 +1,4 @@
-@mixin dyke-gradient {
+@mixin lez-gradient {
   padding-bottom: 10px;
   background: linear-gradient(
       to right,
@@ -12,7 +12,7 @@
   background-size: 200px 7px;
   background-position: bottom center;
 }
-@mixin dyke-hr-gradient {
+@mixin lez-hr-gradient {
   /* gradient settings */
   background: linear-gradient(
       to left,
@@ -33,7 +33,7 @@
   margin-bottom: 20px;
   margin-top: 10px;
 }
-@mixin dyke-gradient-border {
+@mixin lez-gradient-border {
   background: linear-gradient(
       to bottom,
       $rgba-light-brown 0%,

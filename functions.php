@@ -1,22 +1,22 @@
 <?php
-add_action( 'after_setup_theme', 'dykeagenda_setup' );
-function dykeagenda_setup() {
-load_theme_textdomain( 'dykeagenda', get_template_directory() . '/languages' );
+add_action( 'after_setup_theme', 'lezagenda_setup' );
+function lezagenda_setup() {
+load_theme_textdomain( 'lezagenda', get_template_directory() . '/languages' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'html5', array( 'search-form' ) );
 global $content_width;
 if ( ! isset( $content_width ) ) { $content_width = 1920; }
-register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'dykeagenda' ) ) );
+register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'lezagenda' ) ) );
 }
-add_action( 'wp_enqueue_scripts', 'dykeagenda_load_scripts' );
-function dykeagenda_load_scripts() {
-wp_enqueue_style( 'dykeagenda-style', get_stylesheet_uri() );
+add_action( 'wp_enqueue_scripts', 'lezagenda_load_scripts' );
+function lezagenda_load_scripts() {
+wp_enqueue_style( 'lezagenda-style', get_stylesheet_uri() );
 wp_enqueue_script( 'jquery' );
 }
-add_action( 'wp_footer', 'dykeagenda_footer_scripts' );
-function dykeagenda_footer_scripts() {
+add_action( 'wp_footer', 'lezagenda_footer_scripts' );
+function lezagenda_footer_scripts() {
 ?>
 <script>
 jQuery(document).ready(function ($) {
@@ -44,41 +44,41 @@ $("html").addClass("opera");
 </script>
 <?php
 }
-add_filter( 'document_title_separator', 'dykeagenda_document_title_separator' );
-function dykeagenda_document_title_separator( $sep ) {
+add_filter( 'document_title_separator', 'lezagenda_document_title_separator' );
+function lezagenda_document_title_separator( $sep ) {
 $sep = '|';
 return $sep;
 }
-add_filter( 'the_title', 'dykeagenda_title' );
-function dykeagenda_title( $title ) {
+add_filter( 'the_title', 'lezagenda_title' );
+function lezagenda_title( $title ) {
 if ( $title == '' ) {
 return '...';
 } else {
 return $title;
 }
 }
-add_filter( 'the_content_more_link', 'dykeagenda_read_more_link' );
-function dykeagenda_read_more_link() {
+add_filter( 'the_content_more_link', 'lezagenda_read_more_link' );
+function lezagenda_read_more_link() {
 if ( ! is_admin() ) {
 return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">...</a>';
 }
 }
-add_filter( 'excerpt_more', 'dykeagenda_excerpt_read_more_link' );
-function dykeagenda_excerpt_read_more_link( $more ) {
+add_filter( 'excerpt_more', 'lezagenda_excerpt_read_more_link' );
+function lezagenda_excerpt_read_more_link( $more ) {
 if ( ! is_admin() ) {
 global $post;
 return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">...</a>';
 }
 }
-add_filter( 'intermediate_image_sizes_advanced', 'dykeagenda_image_insert_override' );
-function dykeagenda_image_insert_override( $sizes ) {
+add_filter( 'intermediate_image_sizes_advanced', 'lezagenda_image_insert_override' );
+function lezagenda_image_insert_override( $sizes ) {
 unset( $sizes['medium_large'] );
 return $sizes;
 }
-add_action( 'widgets_init', 'dykeagenda_widgets_init' );
-function dykeagenda_widgets_init() {
+add_action( 'widgets_init', 'lezagenda_widgets_init' );
+function lezagenda_widgets_init() {
 register_sidebar( array(
-'name' => esc_html__( 'Sidebar Widget Area', 'dykeagenda' ),
+'name' => esc_html__( 'Sidebar Widget Area', 'lezagenda' ),
 'id' => 'primary-widget-area',
 'before_widget' => '<div class="sidebar-section">',
 'after_widget' => '</div>',
@@ -86,25 +86,25 @@ register_sidebar( array(
 'after_title' => '</h2>',
 ) );
 }
-add_action( 'wp_head', 'dykeagenda_pingback_header' );
-function dykeagenda_pingback_header() {
+add_action( 'wp_head', 'lezagenda_pingback_header' );
+function lezagenda_pingback_header() {
 if ( is_singular() && pings_open() ) {
 printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 }
 }
-add_action( 'comment_form_before', 'dykeagenda_enqueue_comment_reply_script' );
-function dykeagenda_enqueue_comment_reply_script() {
+add_action( 'comment_form_before', 'lezagenda_enqueue_comment_reply_script' );
+function lezagenda_enqueue_comment_reply_script() {
 if ( get_option( 'thread_comments' ) ) {
 wp_enqueue_script( 'comment-reply' );
 }
 }
-function dykeagenda_custom_pings( $comment ) {
+function lezagenda_custom_pings( $comment ) {
 ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
 <?php
 }
-add_filter( 'get_comments_number', 'dykeagenda_comment_count', 0 );
-function dykeagenda_comment_count( $count ) {
+add_filter( 'get_comments_number', 'lezagenda_comment_count', 0 );
+function lezagenda_comment_count( $count ) {
 if ( ! is_admin() ) {
 global $id;
 $get_comments = get_comments( 'status=approve&post_id=' . $id );
