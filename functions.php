@@ -14,6 +14,7 @@ add_action( 'wp_enqueue_scripts', 'lezagenda_load_scripts' );
 function lezagenda_load_scripts() {
 wp_enqueue_style( 'lezagenda-style', get_stylesheet_uri() );
 wp_enqueue_script( 'jquery' );
+wp_enqueue_script( 'script', get_template_directory_uri() . '/js/main.js');
 }
 add_action( 'wp_footer', 'lezagenda_footer_scripts' );
 function lezagenda_footer_scripts() {

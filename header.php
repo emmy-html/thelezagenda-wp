@@ -33,10 +33,12 @@
 <body <?php body_class(); ?>>
     <header>
         <div class="content-wrapper">
-          <a href="<?php echo get_home_url(); ?>"><i class="fas fa-cut fa-2x"></i></a>
-            <nav id="menu">
+          <a href="<?php echo get_home_url(); ?>"><i class="fas fa-cat fa-2x"></i></i></a>
+            <nav id="menu" class="hide-menu">
                 <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
             </nav>
+             <!-- Menu Toggler -->
+          <i class="fas fa-bars fa-2x" id="menu-toggle-button" onclick="hamburger()"></i>
         </div>
     </header>
     <section id="hero">
