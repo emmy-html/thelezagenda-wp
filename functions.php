@@ -60,7 +60,7 @@ return $title;
 add_filter( 'the_content_more_link', 'lezagenda_read_more_link' );
 function lezagenda_read_more_link() {
 if ( ! is_admin() ) {
-return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">...</a>';
+return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">Read More &#8250;</a>';
 }
 }
 add_filter( 'excerpt_more', 'lezagenda_excerpt_read_more_link' );
@@ -114,3 +114,10 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+function wpb_move_comment_field_to_bottom( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+    return $fields;
+    }
+    add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom'); 

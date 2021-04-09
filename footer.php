@@ -9,8 +9,6 @@
         <div class="footer-social-media">
             <a href="https://twitter.com/theelezagenda" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
             <a href="https://instagram.com/lezagenda/" target="_blank"><i class="fab fa-instagram-square fa-2x"></i></a>
-            <a href="https://emery.studio/" target="_blank"><i class="fas fa-palette fa-2x"></i></a>
-            <a href="https://ko-fi.com/" target="_blank"><i class="fas fa-mug-hot fa-2x"></i></a>
         </div>
     </div>
 </footer>

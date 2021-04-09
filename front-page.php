@@ -16,6 +16,7 @@
                     <article class="blog-single-post">
                         <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                         <h3 class="blog-post-metadata">Posted On <?php echo get_the_date(); ?> By <span class="blog-post-author"><?php the_author_posts_link(); ?></span></h3>
+                        <?php the_content( 'Read More', false ); ?> 
                     </article>
                 </div>
                 <?php endwhile; ?>

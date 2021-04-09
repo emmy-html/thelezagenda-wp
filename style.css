@@ -5,7 +5,7 @@ Theme URI: https://github.com/emmy-html
 Author: The Lez Agenda
 Author URI: http://emery.studio/
 Description: The parent theme for The Lez Agenda.
-Version: 2021.1
+Version: 2021
 License: GNU General Public License
 License URI: https://www.gnu.org/licenses/gpl.html
 Text Domain: lezagenda
@@ -228,16 +228,57 @@ header .content-wrapper {
     height: 2px;
     margin-bottom: 20px;
     margin-top: 10px; }
-  #main-content .blog.single-post-template .blog-single-post h1 {
-    background: #FF781F;
-    border-bottom: 3px solid #FF781F;
-    color: #3D0D00;
-    cursor: default;
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-    padding: 10px;
-    text-transform: none;
-    margin-bottom: 10px; }
+  #main-content .blog.single-post-template .blog-single-post {
+    /* hide the featured image on the post page */
+    /* comment section */ }
+    #main-content .blog.single-post-template .blog-single-post strong {
+      color: #ff51b7 !important; }
+    #main-content .blog.single-post-template .blog-single-post .monthly-agenda img {
+      border: 8px solid #ff51b7;
+      border-radius: 10px;
+      padding: 0px !important;
+      width: 70%;
+      height: auto; }
+    #main-content .blog.single-post-template .blog-single-post .featured-pic-hide {
+      display: none; }
+    #main-content .blog.single-post-template .blog-single-post h1 {
+      background: #FF781F;
+      border-bottom: 3px solid #FF781F;
+      color: #3D0D00;
+      cursor: default;
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+      padding: 10px;
+      text-transform: none;
+      margin-bottom: 10px; }
+    #main-content .blog.single-post-template .blog-single-post h2 {
+      color: #FF781F;
+      font-size: 2rem;
+      margin-bottom: 5px;
+      text-align: center; }
+    #main-content .blog.single-post-template .blog-single-post #comments .comment-reply-title {
+      text-transform: lowercase;
+      color: #FF781F; }
+    #main-content .blog.single-post-template .blog-single-post #comments label[for="comment"] {
+      display: none; }
+    #main-content .blog.single-post-template .blog-single-post #comments input {
+      background: #FF781F;
+      border: 3px solid #FF781F;
+      color: #3D0D00;
+      font-family: "Raleway", sans-serif !important;
+      font-weight: 600; }
+    #main-content .blog.single-post-template .blog-single-post #comments textarea {
+      background: #ff51b7;
+      border: 3px solid #ff51b7;
+      color: #3D0D00;
+      font-family: "Raleway", sans-serif !important;
+      width: 80%; }
+    #main-content .blog.single-post-template .blog-single-post #comments input[type="submit"] {
+      padding: 10px; }
+      #main-content .blog.single-post-template .blog-single-post #comments input[type="submit"]:hover {
+        background: #ff51b7;
+        border: 3px solid #ff51b7;
+        transition: .3s all; }
   #main-content .about-page h1 {
     border-bottom: 3px solid #FF781F;
     color: #ff51b7;
@@ -246,7 +287,6 @@ header .content-wrapper {
     text-align: center; }
   #main-content .about-page img {
     border-radius: 100px;
-    filter: grayscale(100%);
     width: 100px;
     height: 100px;
     object-fit: cover; }
@@ -374,53 +414,69 @@ header .content-wrapper {
   #main-content aside.sidebar .content-wrapper .sidebar-latest-posts li:nth-of-type(even) a:visited {
     background: #FF781F;
     border-bottom: 3px solid #FF781F; }
-  #main-content aside.sidebar .content-wrapper .sidebar-search form,
-  #main-content aside.sidebar .content-wrapper .sidebar-newsletter form {
+  #main-content aside.sidebar .content-wrapper .sidebar-search form {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%; }
-    #main-content aside.sidebar .content-wrapper .sidebar-search form input[type="text"],
-    #main-content aside.sidebar .content-wrapper .sidebar-newsletter form input[type="text"] {
+    #main-content aside.sidebar .content-wrapper .sidebar-search form span.screen-reader-text {
+      display: none; }
+    #main-content aside.sidebar .content-wrapper .sidebar-search form input[type="search"] {
       background: #ff51b7;
       border: 3px solid #ff51b7;
       padding: 5px;
-      width: 100%; }
-    #main-content aside.sidebar .content-wrapper .sidebar-search form input::placeholder,
-    #main-content aside.sidebar .content-wrapper .sidebar-newsletter form input::placeholder {
+      width: 100%;
+      font-family: "Raleway", sans-serif !important; }
+    #main-content aside.sidebar .content-wrapper .sidebar-search form input::placeholder {
       color: #3D0D00;
-      font-weight: 600; }
-    #main-content aside.sidebar .content-wrapper .sidebar-search form button[type="submit"],
-    #main-content aside.sidebar .content-wrapper .sidebar-newsletter form button[type="submit"] {
+      font-weight: 600;
+      text-transform: lowercase; }
+    #main-content aside.sidebar .content-wrapper .sidebar-search form input[type="submit"] {
       background: #FF781F;
       border: 3px solid #FF781F;
       padding: 5px; }
-      #main-content aside.sidebar .content-wrapper .sidebar-search form button[type="submit"] i,
-      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form button[type="submit"] i {
+      #main-content aside.sidebar .content-wrapper .sidebar-search form input[type="submit"] i {
         color: #A30062; }
-      #main-content aside.sidebar .content-wrapper .sidebar-search form button[type="submit"]:hover,
-      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form button[type="submit"]:hover {
+      #main-content aside.sidebar .content-wrapper .sidebar-search form input[type="submit"]:hover {
         background: #fff;
         border: 3px solid #fff;
         padding: 5px; }
-  #main-content aside.sidebar .content-wrapper .sidebar-newsletter form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px; }
-    #main-content aside.sidebar .content-wrapper .sidebar-newsletter form input[type="submit"].newsletter-button {
-      width: 107%;
-      background: #FF781F;
-      border: none;
-      border-bottom: 3px solid #FF781F;
-      color: #3D0D00;
-      font-weight: 600;
-      text-transform: lowercase;
-      padding: 5px; }
-      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form input[type="submit"].newsletter-button:hover {
-        background: none;
+  #main-content aside.sidebar .content-wrapper .sidebar-newsletter {
+    width: 100%; }
+    #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px; }
+      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] label {
+        display: none; }
+      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] input[type="text"] {
+        background: #ff51b7;
+        border: 3px solid #ff51b7;
+        font-family: "Raleway", sans-serif !important; }
+      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] input[type="email"] {
+        background: #FF781F;
+        border: 3px solid #FF781F;
+        font-family: "Raleway", sans-serif !important; }
+      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] input::placeholder {
+        color: #3D0D00; }
+      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] input[type="text"],
+      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] input[type="email"] {
+        padding: 5px;
+        width: 100%; }
+      #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] input[type="submit"] {
+        width: 105.5%;
+        background: #FF781F;
+        border: none;
         border-bottom: 3px solid #FF781F;
-        color: #fff;
-        transition: .3s background-color; }
+        color: #3D0D00;
+        font-weight: 600;
+        text-transform: lowercase;
+        padding: 5px; }
+        #main-content aside.sidebar .content-wrapper .sidebar-newsletter form[name="mc-embedded-subscribe-form"] input[type="submit"]:hover {
+          background: none;
+          border-bottom: 3px solid #FF781F;
+          color: #fff;
+          transition: .3s background-color; }
 
 footer {
   padding: 20px 0px; }
@@ -502,8 +558,7 @@ footer {
       align-items: flex-start; }
       #main-content .blog.front-page .content-wrapper article.blog-single-post {
         width: 250px;
-        min-height: 460px;
-        height: 500px; }
+        min-height: 370px; }
         #main-content .blog.front-page .content-wrapper article.blog-single-post img {
           width: 100%;
           height: 150px; }
@@ -518,15 +573,19 @@ footer {
         width: 100%;
         height: 400px;
         margin: 0 auto !important; }
-    #main-content .about-page .about-page-content aside {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly; }
-      #main-content .about-page .about-page-content aside h2 {
-        width: 75%; }
-    #main-content .about-page .about-page-content p {
-      text-align: justify;
-      width: 500px; }
+    #main-content .about-page {
+      width: 70%; }
+      #main-content .about-page h1 {
+        font-size: 2rem; }
+      #main-content .about-page .about-page-content aside {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly; }
+        #main-content .about-page .about-page-content aside h2 {
+          width: 75%; }
+      #main-content .about-page .about-page-content p {
+        text-align: justify;
+        width: 500px; }
     #main-content .sidebar {
       width: 25%; }
 
@@ -535,6 +594,21 @@ footer {
     flex-direction: row; }
     footer .content-wrapper .footer-logo-span {
       background-position: center !important; } }
+/* wordpress specific styles */
+figure {
+  margin-block-start: 0px !important;
+  margin-block-end: 0px !important;
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important; }
+
+.more-link {
+  border-bottom: 3px solid #FF781F; }
+  .more-link:link, .more-link:visited {
+    color: white; }
+  .more-link:hover {
+    color: #FF781F;
+    transition: .3s color; }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
